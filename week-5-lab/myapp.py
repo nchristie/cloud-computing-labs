@@ -51,5 +51,15 @@ def get_bands():
     response = [item['name'] for item in all_records]
     return jsonify(response)
 
+@app.route('/records/albums_by_band/<bandname>/', methods=['GET'])
+def get_album_by_band(bandname):
+    response={bandname:'Not Found!'}
+    for item in all_records:
+
+        if item["name"]==bandname:
+            response = [x["title"] for x in item["albums"]]
+            break
+    return jsonify(response)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
