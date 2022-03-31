@@ -72,7 +72,5 @@ def get_description_of_album(bandname, album):
                     break
     return jsonify(response)
 
-get_description_of_album("Portishead", "Dummy")
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
