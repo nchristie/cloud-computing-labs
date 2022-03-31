@@ -68,7 +68,7 @@ def get_description_of_album(bandname, album):
         if item["name"]==bandname:
             for album_title in item['albums']:
                 if album_title['title'] == album:
-                    response = album_title
+                    response = album_title['description']
                     break
     return jsonify(response)
 
