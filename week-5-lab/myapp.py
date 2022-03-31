@@ -46,6 +46,10 @@ def hello():
 def get_records():
     return jsonify(all_records)
 
+@app.route('/records/all_bands/', methods=['GET'])
+def get_bands():
+    response = [item['name'] for item in all_records]
+    return jsonify(response)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
