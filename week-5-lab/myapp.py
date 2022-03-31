@@ -7,12 +7,12 @@ all_records = [
             {
                 "title": "The King of Limbs",
                 "songs": [],
-                "description":"..."
+                "description":"satisfactory"
             },
             {
                 "title": "OK Computer",
                 "songs": [],
-                "description":"..."
+                "description":"good"
             }
         ]
     },
@@ -22,13 +22,13 @@ all_records = [
             {
                 "title": "Dummy",
                 "songs": [],
-                "description":"..."
+                "description":"excellent"
             },
             {
 
                 "title": "Third",
                 "songs": [],
-                "description":"..."
+                "description":"not bad"
             }
         ]
     }
@@ -66,10 +66,12 @@ def get_description_of_album(bandname, album):
     response={album:'Not Found!'}
     for item in all_records:
         if item["name"]==bandname:
-            for album in item['albums']:
-                if album['title'] == album:
-                    response = album['description']
+            for album_title in item['albums']:
+                if album_title['title'] == album:
+                    response = album_title['description']
     return jsonify(response)
+
+get_description_of_album("Portishead", "Dummy")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
