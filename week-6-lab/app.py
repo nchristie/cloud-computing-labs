@@ -4,8 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-  name = 'Naomi'
-  html = f"<h1>Hello {name}!</h1>"
+  html = f"<h1>Hello!</h1>"
   return html
 
 @app.route("/<name>/", methods=['GET'])
