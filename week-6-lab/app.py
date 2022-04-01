@@ -7,8 +7,8 @@ def hello():
   html = "<h1>Hello {name}!</h1>".format(name="Arman")
   return html
 
-@app.route("/<name>")
-def hello(name):
+@app.route("/<name>/", methods=['GET'])
+def get_hello(name):
   html = f"<h1>Hello {name}!</h1>"
   return html
 
