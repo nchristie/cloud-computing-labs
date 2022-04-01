@@ -6,7 +6,8 @@ names = ['Arman', 'Naomi']
 
 @app.route("/")
 def hello():
-  html = "<h1>Hello {name}!</h1>".format(name="Arman")
+  name = 'Naomi'
+  html = f"<h1>Hello {name}!</h1>"
   return html
 
 @app.route("/names/<name>", methods=['GET'])
