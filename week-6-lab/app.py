@@ -2,15 +2,13 @@ from flask import Flask
 
 app = Flask(__name__)
 
-names = ['Arman', 'Naomi']
-
 @app.route("/")
 def hello():
   name = 'Naomi'
   html = f"<h1>Hello {name}!</h1>"
   return html
 
-@app.route("/names/<name>", methods=['GET'])
+@app.route("/<name>/", methods=['GET'])
 def get_hello(name):
   html = f"<h1>Hello {name}!</h1>"
   return html
