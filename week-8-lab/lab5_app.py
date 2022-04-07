@@ -11,6 +11,10 @@ crime_url_template = 'https://data.police.uk/api/crimes-street/all-crime?lat={la
 
 categories_url_template = 'https://data.police.uk/api/crime-categories?date={date}'
 
+@app.route('/')
+def hello():
+    return('<h1>Hello World!</h1>')
+
 @app.route('/crimestat', methods=['GET'])
 def crimechart():
     my_latitude = request.args.get('lat','51.52369')
